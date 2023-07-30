@@ -1,5 +1,8 @@
 #usda 1.0
 (
+    customLayerData = {
+        int refinementOverrideImplVersion = 0
+    }
     metersPerUnit = 1
     upAxis = "Z"
 )
@@ -168,6 +171,78 @@ over "RootNode"
             custom int preserveOriginalDrawCall = 1
 
             def SphereLight "Lattern_LOD" (
+                prepend apiSchemas = ["ShapingAPI"]
+            )
+            {
+                float colorTemperature = 2500
+                bool enableColorTemperature = 1
+                float3[] extent = [(-12.5, -12.5, -12.5), (12.5, 12.5, 12.5)]
+                float intensity = 300
+                float radius = 3.4
+                float shaping:cone:angle = 180
+                float shaping:cone:softness
+                float shaping:focus
+                color3f shaping:focusTint
+                asset shaping:ies:file
+                double3 xformOp:rotateXYZ = (0, 0, 0)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 0, 10.700000159442425)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+        }
+
+        over "mesh_FB980061152F4A6A"
+        {
+            custom int preserveOriginalDrawCall = 1
+
+            def SphereLight "WallLattern" (
+                prepend apiSchemas = ["ShapingAPI"]
+            )
+            {
+                float colorTemperature = 3000
+                bool enableColorTemperature = 1
+                float exposure = 0
+                float3[] extent = [(-12.5, -12.5, -12.5), (12.5, 12.5, 12.5)]
+                float intensity = 20
+                float radius = 5
+                float shaping:cone:angle = 180
+                float shaping:cone:softness
+                float shaping:focus
+                color3f shaping:focusTint
+                asset shaping:ies:file
+                double3 xformOp:rotateXYZ = (90, 0, 90)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-6.100000090897083, -8.400000125169754, 9.100000135600567)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def SphereLight "WallLattern_01" (
+                prepend apiSchemas = ["ShapingAPI"]
+            )
+            {
+                float colorTemperature = 3000
+                bool enableColorTemperature = 1
+                float exposure = 0
+                float3[] extent = [(-12.5, -12.5, -12.5), (12.5, 12.5, 12.5)]
+                float intensity = 20
+                float radius = 5
+                float shaping:cone:angle = 180
+                float shaping:cone:softness
+                float shaping:focus
+                color3f shaping:focusTint
+                asset shaping:ies:file
+                double3 xformOp:rotateXYZ = (90, 0, 90)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (6.400000095367432, -8.50000012665987, 8.300000123679638)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+        }
+
+        over "mesh_D1D515BC5C75063C"
+        {
+            custom int preserveOriginalDrawCall = 1
+
+            def SphereLight "Lattern_LOD_01" (
                 prepend apiSchemas = ["ShapingAPI"]
             )
             {
