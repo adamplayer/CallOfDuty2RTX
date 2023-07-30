@@ -6,7 +6,9 @@ This is an RTX Remix mod for the Call of Duty 2 PC release.
 > This is not stable, nor release ready.
 
 ## Scope
-Just adding some lights.
+- [x] Stable drawcall hashes
+- [ ] Allow for overdraw
+- [ ] Relighting maps
 
 ## Status
-Nothing for now.
+Stable drawcall hashes in both single and multiplayer for the majority of maps. Still requires more work on getting frustum culling to draw everything.
