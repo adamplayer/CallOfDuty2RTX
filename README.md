@@ -15,5 +15,7 @@ Stable drawcall hashes in both single and multiplayer for the majority of maps. 
 
 ## Credits for this Mod
 KungFooMan - Reverse Engineering
+
 PHP - Reverse Engineering
+
 Tadpole3159 - Moral Support and Graphics
