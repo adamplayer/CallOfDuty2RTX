@@ -106,15 +106,6 @@ over "RootNode"
                     doc = "Enables the emission of light from the material"
                     hidden = false
                 )
-                bool inputs:enable_opacity = 0 (
-                    customData = {
-                        bool default = 0
-                    }
-                    displayGroup = "Opacity"
-                    displayName = "Enable Opacity"
-                    doc = "Enables the use of cutout opacity"
-                    hidden = false
-                )
                 bool inputs:enable_thin_film = 0 (
                     customData = {
                         bool default = 0
@@ -186,9 +177,9 @@ over "RootNode"
                             float min = 0
                         }
                     }
-                    displayGroup = "Opacity"
+                    displayGroup = "Diffuse"
                     displayName = "Opacity Amount"
-                    doc = "Used when no albedo/opacity texture is specified. 0 for completely transparent, 1 for completly opaque."
+                    doc = "Used when no albedo texture is specified. 0 for completely transparent, 1 for completly opaque."
                     hidden = false
                 )
                 float inputs:reflection_roughness_constant = 0.5 (
@@ -290,15 +281,6 @@ over "RootNode"
                     doc = "The texture specifying the albedo value and the optional opacity value to use in the alpha channel"
                     hidden = false
                 )
-                bool inputs:enable_opacity = 0 (
-                    customData = {
-                        bool default = 0
-                    }
-                    displayGroup = "Opacity"
-                    displayName = "Enable Opacity"
-                    doc = "Enables the use of cutout opacity"
-                    hidden = false
-                )
                 bool inputs:enable_thin_film = 0 (
                     customData = {
                         bool default = 0
@@ -394,6 +376,7 @@ over "RootNode"
                     displayGroup = "Specular"
                     displayName = "Anisotropy Map"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 color3f inputs:diffuse_color_constant = (0.2, 0.2, 0.2) (
                     customData = {
@@ -407,6 +390,7 @@ over "RootNode"
                     displayName = "Albedo Base Color"
                     doc = "The base albedo color to use if no texture is specified"
                     hidden = false
+                    renderType = "color"
                 )
                 asset inputs:diffuse_texture = @./Textures/Brick_01_Diffuse.dds@ (
                     customData = {
@@ -416,6 +400,7 @@ over "RootNode"
                     displayName = "Albedo Map"
                     doc = "The texture specifying the albedo value and the optional opacity value to use in the alpha channel"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 color3f inputs:emissive_color_constant = (1, 0.1, 0.1) (
                     customData = {
@@ -429,6 +414,7 @@ over "RootNode"
                     displayName = "Emissive Color"
                     doc = "The emissive color when no emissive color texture is specified."
                     hidden = false
+                    renderType = "color"
                 )
                 float inputs:emissive_intensity = 40 (
                     customData = {
@@ -452,6 +438,7 @@ over "RootNode"
                     displayName = "Emissive Mask Map"
                     doc = "The texture masking the emissive color"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 bool inputs:enable_emission = 0 (
                     customData = {
@@ -460,15 +447,6 @@ over "RootNode"
                     displayGroup = "Emissive"
                     displayName = "Enable Emission"
                     doc = "Enables the emission of light from the material"
-                    hidden = false
-                )
-                bool inputs:enable_opacity = 0 (
-                    customData = {
-                        bool default = 0
-                    }
-                    displayGroup = "Opacity"
-                    displayName = "Enable Opacity"
-                    doc = "Enables the use of cutout opacity"
                     hidden = false
                 )
                 bool inputs:enable_thin_film = 0 (
@@ -488,7 +466,7 @@ over "RootNode"
                     displayName = "Normal Map Encoding"
                     doc = "Encoding type for the normal map.  Octahedral for 2 channel textures. tangent_space_dx for 3 channel normals, and tangent_space_ogl for 3 channel normals with an inverted (OpenGL style) G channel."
                     hidden = false
-                    renderType = "::Z73file_3A::Z17D_3A::SteamLibrary::steamapps::common::ZA1Call_2520of_2520Duty_25202::Z58rtx_2Dremix::captures::materials::AperturePBR_Normal::normalmap_encoding"
+                    renderType = "normalmap_encoding"
                     sdrMetadata = {
                         string __SDR__enum_value = "octahedral"
                         string options = "octahedral:0|tangent_space_ogl:1|tangent_space_dx:2"
@@ -524,6 +502,7 @@ over "RootNode"
                     displayGroup = "Specular"
                     displayName = "Metallic Map"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 asset inputs:normalmap_texture = @./Textures/Brick_01_Normal.dds@ (
                     colorSpace = "auto"
@@ -533,6 +512,7 @@ over "RootNode"
                     displayGroup = "Normal"
                     displayName = "Normal Map"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 float inputs:opacity_constant = 1 (
                     customData = {
@@ -542,9 +522,9 @@ over "RootNode"
                             float min = 0
                         }
                     }
-                    displayGroup = "Opacity"
+                    displayGroup = "Diffuse"
                     displayName = "Opacity Amount"
-                    doc = "Used when no albedo/opacity texture is specified. 0 for completely transparent, 1 for completly opaque."
+                    doc = "Used when no albedo texture is specified. 0 for completely transparent, 1 for completly opaque."
                     hidden = false
                 )
                 float inputs:reflection_roughness_constant = 0.5 (
@@ -568,6 +548,7 @@ over "RootNode"
                     displayGroup = "Specular"
                     displayName = "Roughness Map"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 int inputs:sprite_sheet_cols = 1 (
                     customData = {
@@ -646,15 +627,6 @@ over "RootNode"
                     doc = "The texture specifying the albedo value and the optional opacity value to use in the alpha channel"
                     hidden = false
                 )
-                bool inputs:enable_opacity = 0 (
-                    customData = {
-                        bool default = 0
-                    }
-                    displayGroup = "Opacity"
-                    displayName = "Enable Opacity"
-                    doc = "Enables the use of cutout opacity"
-                    hidden = false
-                )
                 bool inputs:enable_thin_film = 0 (
                     customData = {
                         bool default = 0
@@ -695,9 +667,9 @@ over "RootNode"
                             float min = 0
                         }
                     }
-                    displayGroup = "Opacity"
+                    displayGroup = "Diffuse"
                     displayName = "Opacity Amount"
-                    doc = "Used when no albedo/opacity texture is specified. 0 for completely transparent, 1 for completly opaque."
+                    doc = "Used when no albedo texture is specified. 0 for completely transparent, 1 for completly opaque."
                     hidden = false
                 )
                 float inputs:reflection_roughness_constant = 0.5 (
@@ -769,9 +741,9 @@ over "RootNode"
                             float min = 0
                         }
                     }
-                    displayGroup = "Opacity"
+                    displayGroup = "Diffuse"
                     displayName = "Opacity Amount"
-                    doc = "Used when no albedo/opacity texture is specified. 0 for completely transparent, 1 for completly opaque."
+                    doc = "Used when no albedo texture is specified. 0 for completely transparent, 1 for completly opaque."
                     hidden = false
                 )
                 asset inputs:reflectionroughness_texture = @./Textures/Pavement_01_Roughness.dds@ (
@@ -815,6 +787,7 @@ over "RootNode"
                     displayName = "Albedo Base Color"
                     doc = "The base albedo color to use if no texture is specified"
                     hidden = false
+                    renderType = "color"
                 )
                 asset inputs:diffuse_texture = @@ (
                     customData = {
@@ -824,6 +797,7 @@ over "RootNode"
                     displayName = "Albedo Map"
                     doc = "The texture specifying the albedo value and the optional opacity value to use in the alpha channel"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 float inputs:metallic_constant = 1 (
                     customData = {
@@ -846,6 +820,7 @@ over "RootNode"
                     displayGroup = "Specular"
                     displayName = "Metallic Map"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 asset inputs:normalmap_texture = @../../captures/textures/mp_40_Normal.dds@ (
                     colorSpace = "auto"
@@ -855,6 +830,7 @@ over "RootNode"
                     displayGroup = "Normal"
                     displayName = "Normal Map"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 float inputs:reflection_roughness_constant = 0.24 (
                     customData = {
@@ -1295,15 +1271,6 @@ over "RootNode"
                     doc = "The texture specifying the albedo value and the optional opacity value to use in the alpha channel"
                     hidden = false
                 )
-                bool inputs:enable_opacity = 0 (
-                    customData = {
-                        bool default = 0
-                    }
-                    displayGroup = "Opacity"
-                    displayName = "Enable Opacity"
-                    doc = "Enables the use of cutout opacity"
-                    hidden = false
-                )
                 asset inputs:normalmap_texture = @./Textures/Painted_Sign_01_Normal.dds@ (
                     colorSpace = "auto"
                     customData = {
@@ -1321,9 +1288,9 @@ over "RootNode"
                             float min = 0
                         }
                     }
-                    displayGroup = "Opacity"
+                    displayGroup = "Diffuse"
                     displayName = "Opacity Amount"
-                    doc = "Used when no albedo/opacity texture is specified. 0 for completely transparent, 1 for completly opaque."
+                    doc = "Used when no albedo texture is specified. 0 for completely transparent, 1 for completly opaque."
                     hidden = false
                 )
                 asset inputs:reflectionroughness_texture = @./Textures/Painted_Sign_01_Roughness.dds@ (
@@ -1530,15 +1497,6 @@ over "RootNode"
                     doc = "Enables the emission of light from the material"
                     hidden = false
                 )
-                bool inputs:enable_opacity = 0 (
-                    customData = {
-                        bool default = 0
-                    }
-                    displayGroup = "Opacity"
-                    displayName = "Enable Opacity"
-                    doc = "Enables the use of cutout opacity"
-                    hidden = false
-                )
                 bool inputs:enable_thin_film = 0 (
                     customData = {
                         bool default = 0
@@ -1610,9 +1568,9 @@ over "RootNode"
                             float min = 0
                         }
                     }
-                    displayGroup = "Opacity"
+                    displayGroup = "Diffuse"
                     displayName = "Opacity Amount"
-                    doc = "Used when no albedo/opacity texture is specified. 0 for completely transparent, 1 for completly opaque."
+                    doc = "Used when no albedo texture is specified. 0 for completely transparent, 1 for completly opaque."
                     hidden = false
                 )
                 float inputs:reflection_roughness_constant = 0.5 (
@@ -1781,6 +1739,7 @@ over "RootNode"
                     displayName = "Albedo Map"
                     doc = "The texture specifying the albedo value and the optional opacity value to use in the alpha channel"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 color3f inputs:emissive_color_constant = (1, 0.1, 0.1) (
                     customData = {
@@ -1794,6 +1753,7 @@ over "RootNode"
                     displayName = "Emissive Color"
                     doc = "The emissive color when no emissive color texture is specified."
                     hidden = false
+                    renderType = "color"
                 )
                 float inputs:emissive_intensity = 40 (
                     customData = {
@@ -1817,6 +1777,7 @@ over "RootNode"
                     displayName = "Emissive Mask Map"
                     doc = "The texture masking the emissive color"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 bool inputs:enable_emission = 1 (
                     customData = {
@@ -1949,6 +1910,7 @@ over "RootNode"
                     displayName = "Albedo Map"
                     doc = "The texture specifying the albedo value and the optional opacity value to use in the alpha channel"
                     hidden = false
+                    renderType = "texture_2d"
                 )
             }
         }
@@ -2183,15 +2145,6 @@ over "RootNode"
                     doc = "Enables the emission of light from the material"
                     hidden = false
                 )
-                bool inputs:enable_opacity = 0 (
-                    customData = {
-                        bool default = 0
-                    }
-                    displayGroup = "Opacity"
-                    displayName = "Enable Opacity"
-                    doc = "Enables the use of cutout opacity"
-                    hidden = false
-                )
                 bool inputs:enable_thin_film = 0 (
                     customData = {
                         bool default = 0
@@ -2263,9 +2216,9 @@ over "RootNode"
                             float min = 0
                         }
                     }
-                    displayGroup = "Opacity"
+                    displayGroup = "Diffuse"
                     displayName = "Opacity Amount"
-                    doc = "Used when no albedo/opacity texture is specified. 0 for completely transparent, 1 for completly opaque."
+                    doc = "Used when no albedo texture is specified. 0 for completely transparent, 1 for completly opaque."
                     hidden = false
                 )
                 float inputs:reflection_roughness_constant = 0.5 (
@@ -2969,7 +2922,7 @@ over "RootNode"
         {
             over "Shader"
             {
-                asset inputs:diffuse_texture = @../../captures/textures/German_01_Diffuse.dds@ (
+                asset inputs:diffuse_texture = @./Textures/German_01_Diffuse.dds@ (
                     customData = {
                         asset default = @@
                     }
@@ -2978,7 +2931,7 @@ over "RootNode"
                     doc = "The texture specifying the albedo value and the optional opacity value to use in the alpha channel"
                     hidden = false
                 )
-                asset inputs:metallic_texture = @../../captures/textures/German_01_Metal.dds@ (
+                asset inputs:metallic_texture = @./Textures/German_01_Metal.dds@ (
                     colorSpace = "auto"
                     customData = {
                         asset default = @@
@@ -2987,7 +2940,7 @@ over "RootNode"
                     displayName = "Metallic Map"
                     hidden = false
                 )
-                asset inputs:normalmap_texture = @../../captures/textures/German_01_Normal.dds@ (
+                asset inputs:normalmap_texture = @./Textures/German_01_Normal.dds@ (
                     colorSpace = "auto"
                     customData = {
                         asset default = @@
@@ -2996,7 +2949,7 @@ over "RootNode"
                     displayName = "Normal Map"
                     hidden = false
                 )
-                asset inputs:reflectionroughness_texture = @../../captures/textures/German_01_Roughness.dds@ (
+                asset inputs:reflectionroughness_texture = @./Textures/German_01_Roughness.dds@ (
                     colorSpace = "auto"
                     customData = {
                         asset default = @@
@@ -3059,6 +3012,7 @@ over "RootNode"
                     displayName = "Albedo Map"
                     doc = "The texture specifying the albedo value and the optional opacity value to use in the alpha channel"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 asset inputs:normalmap_texture = @../../captures/textures/Stone_Bullet_Hole_01_Normal.dds@ (
                     colorSpace = "auto"
@@ -3068,6 +3022,7 @@ over "RootNode"
                     displayGroup = "Normal"
                     displayName = "Normal Map"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 asset inputs:reflectionroughness_texture = @../../captures/textures/Stone_Bullet_Hole_01_Roughness.dds@ (
                     colorSpace = "auto"
@@ -3077,6 +3032,7 @@ over "RootNode"
                     displayGroup = "Specular"
                     displayName = "Roughness Map"
                     hidden = false
+                    renderType = "texture_2d"
                 )
             }
         }
@@ -3174,6 +3130,7 @@ over "RootNode"
                     displayName = "Emissive Mask Map"
                     doc = "The texture masking the emissive color"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 bool inputs:enable_emission = 1 (
                     customData = {
@@ -3240,6 +3197,7 @@ over "RootNode"
                     displayName = "Albedo Map"
                     doc = "The texture specifying the albedo value and the optional opacity value to use in the alpha channel"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 float inputs:metallic_constant = 1 (
                     customData = {
@@ -3282,6 +3240,7 @@ over "RootNode"
                     displayName = "Albedo Map"
                     doc = "The texture specifying the albedo value and the optional opacity value to use in the alpha channel"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 asset inputs:normalmap_texture = @../../captures/textures/Stone_Bullet_Hole_04_Normal.dds@ (
                     colorSpace = "auto"
@@ -3291,6 +3250,7 @@ over "RootNode"
                     displayGroup = "Normal"
                     displayName = "Normal Map"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 asset inputs:reflectionroughness_texture = @../../captures/textures/Stone_Bullet_Hole_04_Roughness.dds@ (
                     colorSpace = "auto"
@@ -3300,6 +3260,7 @@ over "RootNode"
                     displayGroup = "Specular"
                     displayName = "Roughness Map"
                     hidden = false
+                    renderType = "texture_2d"
                 )
             }
         }
@@ -3316,6 +3277,7 @@ over "RootNode"
                     displayName = "Albedo Map"
                     doc = "The texture specifying the albedo value and the optional opacity value to use in the alpha channel"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 asset inputs:normalmap_texture = @../../captures/textures/Plaster_Bullet_Hole_01_Normal.dds@ (
                     colorSpace = "auto"
@@ -3325,6 +3287,7 @@ over "RootNode"
                     displayGroup = "Normal"
                     displayName = "Normal Map"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 asset inputs:reflectionroughness_texture = @../../captures/textures/Plaster_Bullet_Hole_01_Roughness.dds@ (
                     colorSpace = "auto"
@@ -3334,6 +3297,7 @@ over "RootNode"
                     displayGroup = "Specular"
                     displayName = "Roughness Map"
                     hidden = false
+                    renderType = "texture_2d"
                 )
             }
         }
@@ -3342,7 +3306,16 @@ over "RootNode"
         {
             over "Shader"
             {
-                asset inputs:diffuse_texture = @../../captures/textures/Plaster_Bullet_Hole_02_Diffuse.dds@
+                asset inputs:diffuse_texture = @../../captures/textures/Plaster_Bullet_Hole_02_Diffuse.dds@ (
+                    customData = {
+                        asset default = @@
+                    }
+                    displayGroup = "Diffuse"
+                    displayName = "Albedo Map"
+                    doc = "The texture specifying the albedo value and the optional opacity value to use in the alpha channel"
+                    hidden = false
+                    renderType = "texture_2d"
+                )
                 asset inputs:normalmap_texture = @../../captures/textures/Plaster_Bullet_Hole_02_Normal.dds@ (
                     colorSpace = "auto"
                     customData = {
@@ -3351,6 +3324,7 @@ over "RootNode"
                     displayGroup = "Normal"
                     displayName = "Normal Map"
                     hidden = false
+                    renderType = "texture_2d"
                 )
                 asset inputs:reflectionroughness_texture = @../../captures/textures/Plaster_Bullet_Hole_02_Roughness.dds@ (
                     colorSpace = "auto"
@@ -3360,6 +3334,7 @@ over "RootNode"
                     displayGroup = "Specular"
                     displayName = "Roughness Map"
                     hidden = false
+                    renderType = "texture_2d"
                 )
             }
         }
@@ -3849,6 +3824,40 @@ over "RootNode"
                 )
             }
         }
+
+        over "mat_A1330098687343A7"
+        {
+            over "Shader"
+            {
+                asset inputs:diffuse_texture = @./Textures/Rubble_02_Diffuse.dds@ (
+                    customData = {
+                        asset default = @@
+                    }
+                    displayGroup = "Diffuse"
+                    displayName = "Albedo Map"
+                    doc = "The texture specifying the albedo value and the optional opacity value to use in the alpha channel"
+                    hidden = false
+                )
+                asset inputs:normalmap_texture = @./Textures/Rubble_02_Normal.dds@ (
+                    colorSpace = "auto"
+                    customData = {
+                        asset default = @@
+                    }
+                    displayGroup = "Normal"
+                    displayName = "Normal Map"
+                    hidden = false
+                )
+                asset inputs:reflectionroughness_texture = @./Textures/Rubble_02_Roughness.dds@ (
+                    colorSpace = "auto"
+                    customData = {
+                        asset default = @@
+                    }
+                    displayGroup = "Specular"
+                    displayName = "Roughness Map"
+                    hidden = false
+                )
+            }
+        }
     }
 
     over "meshes"
@@ -3990,6 +3999,164 @@ over "RootNode"
                 double3 xformOp:rotateXYZ = (0, 0, 0)
                 double3 xformOp:scale = (0.1, 0.1, 0.1)
                 double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+        }
+
+        over "mesh_22C1A463248459B3"
+        {
+            custom int preserveOriginalDrawCall = 1
+
+            def Xform "Xform_02" (
+                references = @./Meshes/Ground_Scatter/Leaf_Pile_003.usda@
+            )
+            {
+                double3 xformOp:rotateXYZ = (8.666613269105284, 0.40734422506895385, -0.015957775031893107)
+                double3 xformOp:scale = (0.25, 0.25, 0.25)
+                double3 xformOp:translate = (209.6233483760504, 292.67048050079705, -2.2228579690810903)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+                over "Looks"
+                {
+                    over "AperturePBR_Opacity"
+                    {
+                        over "Shader"
+                        {
+                        }
+                    }
+                }
+            }
+
+            def Xform "Xform_03" (
+                references = @./Meshes/Ground_Scatter/Leaf_Pile_003.usda@
+            )
+            {
+                double3 xformOp:rotateXYZ = (7.302071638022312, -2.0873616158021946, 0.3239194385116946)
+                double3 xformOp:scale = (0.25, 0.25, 0.25)
+                double3 xformOp:translate = (202.80387110535386, 278.65681500844556, -4.6350361979683345)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "Xform_04" (
+                references = @./Meshes/Ground_Scatter/Leaf_Pile_003.usda@
+            )
+            {
+                double3 xformOp:rotateXYZ = (-6.5892560735081815, 0, 0)
+                double3 xformOp:scale = (0.25, 0.25, 0.25)
+                double3 xformOp:translate = (231.6284017405193, 249.6949932852786, -5.653758774921322)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "Xform_05" (
+                references = @./Meshes/Ground_Scatter/Leaf_Pile_001.usda@
+            )
+            {
+                double3 xformOp:rotateXYZ = (5.311538443178847, 11.08210607279213, -93.0394932688398)
+                double3 xformOp:scale = (0.3291813486868695, 0.3291813486868694, 0.3291813486868695)
+                double3 xformOp:translate = (233.21542091465818, 257.6523422981325, -7.03963309329073)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "Xform_06" (
+                references = @./Meshes/Ground_Scatter/Leaf_Pile_001.usda@
+            )
+            {
+                double3 xformOp:rotateXYZ = (2.7849143094725264, -3.2005274695480352, 6.689890118073379)
+                double3 xformOp:scale = (0.3291813486868695, 0.3291813486868694, 0.3291813486868695)
+                double3 xformOp:translate = (186.37690116627124, 328.2042303959454, 1.5365887141021881)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "Xform_07" (
+                references = @./Meshes/Ground_Scatter/Leaf_Pile_003.usda@
+            )
+            {
+                double3 xformOp:rotateXYZ = (2.2376220809652807, 4.939808901199598, -116.04703062106486)
+                double3 xformOp:scale = (0.25, 0.25, 0.25)
+                double3 xformOp:translate = (220.6811533227877, 317.31714861111516, 1.9503528607070266)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+        }
+
+        over "mesh_C1AEEF3FFC2DC439"
+        {
+            def Xform "Xform" (
+                references = @./Meshes/Stained_Glass/Stained_Glass_Frame.usda@
+            )
+            {
+                double3 xformOp:rotateXYZ = (0, 0, 90)
+                double3 xformOp:scale = (0.30937802857870017, 0.4000000000000002, 0.3407936586172595)
+                double3 xformOp:translate = (316.7827456101271, -16042.57222563396, 140.7301497296498)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "Xform_01" (
+                references = @./Meshes/Stained_Glass/Stained_Glass.usda@
+            )
+            {
+                double3 xformOp:rotateXYZ = (0, 0, 90)
+                double3 xformOp:scale = (0.30937802857870017, 0.4000000000000002, 0.3407936586172595)
+                double3 xformOp:translate = (316.7827456101271, -16042.57222563396, 140.7301497296498)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "Xform_02" (
+                references = @./Meshes/Stained_Glass/Stained_Glass.usda@
+            )
+            {
+                double3 xformOp:rotateXYZ = (0, 0, 90)
+                double3 xformOp:scale = (0.30937802857870017, 0.4000000000000002, 0.3407936586172595)
+                double3 xformOp:translate = (313.38835338698146, -15918.632033120623, 140.30796479164462)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "Xform_03" (
+                references = @./Meshes/Stained_Glass/Stained_Glass_Frame.usda@
+            )
+            {
+                double3 xformOp:rotateXYZ = (0, 0, 90)
+                double3 xformOp:scale = (0.30937802857870017, 0.4000000000000002, 0.3407936586172595)
+                double3 xformOp:translate = (313.38835338698146, -15918.632033120623, 140.30796479164462)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "Xform_04" (
+                references = @./Meshes/Stained_Glass/Stained_Glass.usda@
+            )
+            {
+                double3 xformOp:rotateXYZ = (0, 0, 90)
+                double3 xformOp:scale = (0.30937802857870017, 0.4000000000000002, 0.3407936586172595)
+                double3 xformOp:translate = (313.3883533869813, -15811.72574436285, 140.30796479164462)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "Xform_05" (
+                references = @./Meshes/Stained_Glass/Stained_Glass_Frame.usda@
+            )
+            {
+                double3 xformOp:rotateXYZ = (0, 0, 90)
+                double3 xformOp:scale = (0.30937802857870017, 0.4000000000000002, 0.3407936586172595)
+                double3 xformOp:translate = (313.3883533869813, -15811.72574436285, 140.30796479164462)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "Xform_06" (
+                references = @./Meshes/Stained_Glass/Stained_Glass_Frame.usda@
+            )
+            {
+                double3 xformOp:rotateXYZ = (0, 0, 175.21191533441748)
+                double3 xformOp:scale = (0.30937802857870017, 0.4000000000000002, 0.3407936586172595)
+                double3 xformOp:translate = (452.9720438212593, -16134.59612690017, 79.84179482744237)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "Xform_07" (
+                references = @./Meshes/Stained_Glass/Stained_Glass.usda@
+            )
+            {
+                double3 xformOp:rotateXYZ = (0, 0, 175.21191533441748)
+                double3 xformOp:scale = (0.30937802857870017, 0.4000000000000002, 0.3407936586172595)
+                double3 xformOp:translate = (453.05070132341956, -16133.657077732714, 79.8417948274428)
                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
             }
         }

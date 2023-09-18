@@ -50,9 +50,9 @@ over "RootNode"
             {
                 float colorTemperature = 3500
                 bool enableColorTemperature = 1
-                float exposure = 8
+                float exposure = 2
                 float3[] extent = [(-12.5, -12.5, -12.5), (12.5, 12.5, 12.5)]
-                float intensity = 500
+                float intensity = 250
                 float radius = 2
                 float shaping:cone:angle = 180
                 float shaping:cone:softness
@@ -61,7 +61,7 @@ over "RootNode"
                 asset shaping:ies:file
                 double3 xformOp:rotateXYZ = (90, 0, 90)
                 double3 xformOp:scale = (1, 1, 1)
-                double3 xformOp:translate = (0, 0, 0)
+                double3 xformOp:translate = (0, 0, -3.0000000447034836)
                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
             }
         }
@@ -310,6 +310,32 @@ over "RootNode"
                 uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
             }
         }
+
+        over "mesh_8C9968A013932758"
+        {
+            custom int preserveOriginalDrawCall = 1
+
+            def SphereLight "SearchLight" (
+                prepend apiSchemas = ["ShapingAPI"]
+            )
+            {
+                float colorTemperature = 7000
+                bool enableColorTemperature = 1
+                float exposure = 2
+                float3[] extent = [(-12.5, -12.5, -12.5), (12.5, 12.5, 12.5)]
+                float intensity = 500
+                float radius = 9
+                float shaping:cone:angle = 55.5
+                float shaping:cone:softness
+                float shaping:focus = 8.8
+                color3f shaping:focusTint = (0.008772214, 0.0104443515, 0.01544404)
+                asset shaping:ies:file
+                double3 xformOp:rotateXYZ = (-104.200001552701, 0, 0)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, -18.100000269711018, 70.30000104755163)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+        }
     }
 
     over "Looks"
@@ -434,6 +460,54 @@ over "RootNode"
                     hidden = false
                     renderType = "texture_2d"
                 )
+            }
+        }
+    }
+
+    over "instances"
+    {
+        over "inst_A1BE9F068F577F55_0"
+        {
+            over "mesh" (
+                active = false
+            )
+            {
+            }
+        }
+
+        over "inst_FFC21993A9C3101E_0"
+        {
+            over "mesh" (
+                active = false
+            )
+            {
+            }
+        }
+
+        over "inst_B43FF5FDABEBD0B4_0"
+        {
+            over "mesh" (
+                active = false
+            )
+            {
+            }
+        }
+
+        over "inst_D494827D4FF4CB55_0"
+        {
+            over "mesh" (
+                active = false
+            )
+            {
+            }
+        }
+
+        over "inst_B9415E4AD6409D42_0"
+        {
+            over "mesh" (
+                active = false
+            )
+            {
             }
         }
     }
