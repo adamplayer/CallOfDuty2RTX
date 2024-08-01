@@ -1,0 +1,10 @@
+increase the temp skin buffer (used if r_skinCache = 0)
+from '10485760' to '44040192' bytes
+
+0x10011C10 :: (0x11C10 + 1) = 4 bytes = alloc size ..................... change byte at +4 -> 0x02
+0x10020E13 :: (0x20e13 + 1) = 4 bytes = alloc size .. same but unused?.. change byte at +4 -> 0x02
+
+0x1001F404 :: (0x1F404 + 2) = 4 bytes = size of buffer - cmp for warning .. change byte at +5 -> 0x02
+0x1001F5F1 :: (0x1F5F1 + 2) = 4 bytes = size of buffer - cmp for warning .. change byte at +5 -> 0x02
+
+

@@ -14,3 +14,5 @@
 !.usd
 !.dds
 !*.ini
+!*.ips
+!*.txt
